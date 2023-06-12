@@ -6,7 +6,11 @@ import routerMain from './routers/index'
 
 dotEnv.config()
 
+
+
 const server = express()
+
+server.use(express.static(path.join(__dirname,'../public')))
 
 server.set('view engine','mustache')
 server.set('views',path.join(__dirname,'views'))
@@ -20,7 +24,7 @@ server.use((req,res)=>{
 })
 
 
-server.use(express.static(path.join(__dirname,'../public')))
+
 
 
 server.listen(process.env.PORT)
