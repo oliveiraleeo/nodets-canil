@@ -20,7 +20,7 @@ server.engine('mustache',mustache())
 
 server.use(routerMain)
 server.use((req,res)=>{
-  res.send('pagina nao encontrada!')
+  res.render('pages/404')
 })
 
 
